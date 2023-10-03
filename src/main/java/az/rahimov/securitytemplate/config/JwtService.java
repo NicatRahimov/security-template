@@ -1,4 +1,4 @@
-package az.rahimov.securitytemplate.service;
+package az.rahimov.securitytemplate.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
