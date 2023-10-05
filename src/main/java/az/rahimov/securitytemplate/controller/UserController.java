@@ -1,25 +1,20 @@
 package az.rahimov.securitytemplate.controller;
 
 import az.rahimov.securitytemplate.model.User;
-import az.rahimov.securitytemplate.repository.UserRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("user")
-@RequiredArgsConstructor
+@RequestMapping("secured")
 public class UserController {
 
-    private final UserRepository userRepository;
+    @GetMapping("hello")
+    private String hello(){
+        return "Hello";
+    }
 
-    @PostMapping("get")
-    public List<User> getAllUsers(){
-       return userRepository.findAll();
-    }
-    @PostMapping("post")
-    public void addUser(@RequestBody User user){
-        userRepository.save(user);
-    }
+
 }
